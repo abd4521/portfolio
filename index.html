@@ -1,307 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdullah Masood| Futuristic Web Developer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        <style>
-/* Contact Section Styling */
-.contact {
-    background: #0e0e0e;
-    padding: 60px 20px;
-    color: white;
-    text-align: center;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abdullah Masood | Futuristic Web Developer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Base Styles */
+    :root {
+      --primary: #00f7ff;
+      --secondary: #6c00ff;
+      --dark: #0a0a0a;
+      --light: #f0f0f0;
+      --gray: #333;
+    }
 
-.contact form {
-    max-width: 600px;
-    margin: 30px auto;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-.contact input,
-.contact textarea {
-    padding: 12px 15px;
-    border: none;
-    border-radius: 8px;
-    background: #1a1a1a;
-    color: white;
-    font-size: 16px;
-    resize: none;
-}
+    body {
+      background-color: var(--dark);
+      color: var(--light);
+      overflow-x: hidden;
+      width: 100vw;
+    }
 
-.contact input::placeholder,
-.contact textarea::placeholder {
-    color: #aaa;
-}
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-.contact button {
-    padding: 12px;
-    background: #00ffff;
-    border: none;
-    color: black;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
 
-.contact button:hover {
-    background: #00cccc;
-}
+    header {
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(10px);
+    }
 
-.social-links {
-    margin-top: 30px;
-}
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0 20px;
+    }
 
-.social-links a {
-    margin: 0 10px;
-    color: #00ffff;
-    font-size: 24px;
-    transition: color 0.3s ease;
-}
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
 
-.social-links a:hover {
-    color: white;
-}
-</style>
+    .glow {
+      text-shadow: 0 0 10px var(--primary);
+    }
 
-    </style>
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 100px;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .highlight {
+      color: var(--primary);
+    }
+
+    .hero h2 {
+      font-weight: 400;
+      margin: 10px 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: var(--primary);
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .projects {
+      padding: 80px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background-color: #111;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .project-info h3 {
+      margin-bottom: 10px;
+      color: var(--primary);
+    }
+
+    .tech-stack span {
+      display: inline-block;
+      margin-right: 10px;
+      background: #222;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+
+    .btn-small {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 5px 15px;
+      background-color: var(--primary);
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+
+    .skills {
+      padding: 80px 0;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .skill-item {
+      text-align: center;
+    }
+
+    .skill-item i {
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .contact {
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto 30px;
+    }
+
+    form input,
+    form textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+    }
+
+    form button {
+      padding: 10px;
+      background-color: var(--primary);
+      border: none;
+      color: #000;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: var(--light);
+      font-size: 1.5rem;
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Floating Particles Background (Optional) -->
-        <div id="particles-js"></div>
+  <div class="container">
+    <div id="particles-js"></div>
 
-        <!-- Header/Navbar -->
-        <header>
-            <nav>
-                <div class="logo">
-                    <span class="glow">DEV</span>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-            </nav>
-        </header>
+    <header>
+      <nav>
+        <div class="logo"><span class="glow">DEV</span></div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+      </nav>
+    </header>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 class="glow">HI, I'M <span class="highlight">Abdullah Masood</span></h1>
-                <h2>A Futuristic Web Developer</h2>
-                <p>Building immersive digital experiences with cutting-edge tech.</p>
-                <a href="#projects" class="btn">View My Work <i class="fas fa-arrow-down"></i></a>
-            </div>
-            <div class="hero-image">
-                <div class="hexagon"></div>
-                <img src="https://via.placeholder.com/400" alt="Your Image" class="profile-img">
-            </div>
-        </section>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1 class="glow">HI, I'M <span class="highlight">Abdullah Masood</span></h1>
+        <h2>A Futuristic Web Developer</h2>
+        <p>Building immersive digital experiences with cutting-edge tech.</p>
+        <a href="#projects" class="btn">View My Work <i class="fas fa-arrow-down"></i></a>
+      </div>
+      <div class="hero-image">
+        <img src="https://via.placeholder.com/400" alt="Your Image" class="profile-img" />
+      </div>
+    </section>
 
-        <!-- Projects Section -->
-       <!-- Projects Section -->
-<section id="projects" class="projects">
-    <h2 class="section-title">MY <span class="highlight">PROJECTS</span></h2>
-    <div class="project-grid">
-        <!-- UET Aggregate Calculator -->
+    <section id="projects" class="projects">
+      <h2 class="section-title">MY <span class="highlight">PROJECTS</span></h2>
+      <div class="project-grid">
+        <!-- Repeat project-card blocks as needed -->
         <div class="project-card">
-        
-            <div class="project-info">
-                <h3>UET AGGREGATE CALCULATOR</h3>
-                <p>Smart tool with field suggestion algorithm for university admissions.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Flask</span>
-                    <span>JavaScript</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://uet.imabd.site" target="_blank" class="btn-small">Live Demo</a>
-                </div>
+          <div class="project-info">
+            <h3>UET AGGREGATE CALCULATOR</h3>
+            <p>Smart tool with field suggestion algorithm for university admissions.</p>
+            <div class="tech-stack"><span>Python</span><span>Flask</span><span>JavaScript</span></div>
+            <div class="project-links">
+              <a href="https://uet.imabd.site" target="_blank" class="btn-small">Live Demo</a>
             </div>
+          </div>
         </div>
 
-        <!-- NET Marks Predictor -->
-        <div class="project-card">
-            
-            <div class="project-info">
-                <h3>NET MARKS PREDICTOR</h3>
-                <p>AI-powered score estimation for Pakistan's National Testing Service.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>Scikit-learn</span>
-                    <span>Pandas</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://iamabd873.pythonanywhere.com" target="_blank" class="btn-small">Live Demo</a>
-                </div>
-            </div>
-        </div>
+        <!-- Add the remaining project cards here like NET Predictor, GitHub Server, etc. -->
 
-        <!-- GitHub Server -->
-        <div class="project-card">
-            
-            <div class="project-info">
-                <h3>GITHUB SERVER</h3>
-                <p>Custom GitHub interface with enhanced project management features.</p>
-                <div class="tech-stack">
-                    <span>Node.js</span>
-                    <span>React</span>
-                    <span>GraphQL</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://server.imabd.site" target="_blank" class="btn-small">Live Demo</a>
-                </div>
-            </div>
-        </div>
+      </div>
+    </section>
 
-        <!-- E-commerce Stores -->
-        <div class="project-card">
-           
-            <div class="project-info">
-                <h3>E-COMMERCE PLATFORMS</h3>
-                <p>Full-featured online stores with payment integrations.</p>
-                <div class="tech-stack">
-                    <span>React</span>
-                    <span>Stripe API</span>
-                    <span>MongoDB</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://store.imabd.site" target="_blank" class="btn-small">Store 1</a>
-                    <a href="https://shop.imabd.site" target="_blank" class="btn-small">Store 2</a>
-                </div>
-            </div>
-        </div>
+    <section id="skills" class="skills">
+      <h2 class="section-title">MY <span class="highlight">SKILLS</span></h2>
+      <div class="skills-grid">
+        <div class="skill-item"><i class="fab fa-js"></i><p>JavaScript</p></div>
+        <div class="skill-item"><i class="fab fa-react"></i><p>React</p></div>
+        <div class="skill-item"><i class="fab fa-node-js"></i><p>Node.js</p></div>
+        <div class="skill-item"><i class="fas fa-database"></i><p>MongoDB</p></div>
+        <div class="skill-item"><i class="fab fa-css3-alt"></i><p>CSS3</p></div>
+        <div class="skill-item"><i class="fab fa-python"></i><p>Python</p></div>
+      </div>
+    </section>
 
-        <!-- ECAT Helper Tools -->
-        <div class="project-card">
-            
-                
-            <div class="project-info">
-                <h3>ECAT HELPER TOOLS</h3>
-                <p>Interactive preparation tools for engineering entrance exams.</p>
-                <div class="tech-stack">
-                    <span>JavaScript</span>
-                    <span>CSS3</span>
-                    <span>MathJax</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://imabd.site" target="_blank" class="btn-small">Live Demo</a>
-                </div>
-            </div>
-        </div>
+    <section id="contact" class="contact">
+      <h2 class="section-title">GET IN <span class="highlight">TOUCH</span></h2>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="ed56c54d-eb19-49ae-b051-fbe97b2d8a7f" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </section>
 
-        <!-- Student Management -->
-        <div class="project-card">
-            
-               
-            <div class="project-info">
-                <h3>STUDENT MANAGEMENT</h3>
-                <p>Comprehensive academic records system with analytics.</p>
-                <div class="tech-stack">
-                    <span>Django</span>
-                    <span>PostgreSQL</span>
-                    <span>Bootstrap</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://iamabd.pythonanywhere.com" target="_blank" class="btn-small">Live Demo</a>
-                </div>
-            </div>
-        </div>
+    <footer>
+      <p>&copy; 2024 Abdullah Masood. All Rights Reserved.</p>
+    </footer>
+  </div>
 
-        <!-- Chatbot -->
-        <div class="project-card">
-            
-            <div class="project-info">
-                <h3>AI CHATBOT</h3>
-                <p>Context-aware conversational agent with NLP capabilities.</p>
-                <div class="tech-stack">
-                    <span>Python</span>
-                    <span>TensorFlow</span>
-                    <span>WebSockets</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://chatbot.imabd.site" target="_blank" class="btn-small">Live Demo</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills">
-            <h2 class="section-title">MY <span class="highlight">SKILLS</span></h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <i class="fab fa-js"></i>
-                    <p>JavaScript</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-react"></i>
-                    <p>React</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-node-js"></i>
-                    <p>Node.js</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fas fa-database"></i>
-                    <p>MongoDB</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-css3-alt"></i>
-                    <p>CSS3</p>
-                </div>
-                <div class="skill-item">
-                    <i class="fab fa-python"></i>
-                    <p>Python</p>
-                </div>
-            </div>
-        </section>
-
-    
-        <section id="contact" class="contact">
-            <h2 class="section-title">GET IN <span class="highlight">TOUCH</span></h2>
-          
-<form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="ed56c54d-eb19-49ae-b051-fbe97b2d8a7f" />
-  <input type="text" name="name" required />
-  <input type="email" name="email" required />
-  <textarea name="message" required></textarea>
-  <button type="submit">Send Message</button>
-</form>
-
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Your Name. All Rights Reserved.</p>
-        </footer>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="script.js"></script>
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

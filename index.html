@@ -208,19 +208,14 @@
         <section id="contact" class="contact">
             <h2 class="section-title">GET IN <span class="highlight">TOUCH</span></h2>
           
-<form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-    
-    <input type="hidden" name="access_key" value="ed56c54d-eb19-49ae-b051-fbe97b2d8a7f">
-    <input type="hidden" name="subject" value="New Message from Portfolio">
-    <input type="hidden" name="redirect" value="https://yourportfolio.com/thank-you.html">
-    <input type="checkbox" name="botcheck" style="display: none;">
-
-    
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+<form action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="ed56c54d-eb19-49ae-b051-fbe97b2d8a7f" />
+  <input type="text" name="name" required />
+  <input type="email" name="email" required />
+  <textarea name="message" required></textarea>
+  <button type="submit">Send Message</button>
 </form>
+
             <div class="social-links">
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
